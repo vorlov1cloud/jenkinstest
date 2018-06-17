@@ -37,7 +37,7 @@ pipeline {
     }
     stage('ok6') {
       steps {
-        sh 'o ok6'
+        sh 'echo ok6'
       }
     }
   }
