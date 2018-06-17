@@ -1,29 +1,43 @@
 pipeline {
   agent any
   stages {
-    stage('test shell') {
+    stage('ok') {
       parallel {
-        stage('test shell') {
+        stage('ok') {
           steps {
-            sh 'echo OK && mkdir /root/sex'
-            sleep 10
+            sh 'echo ok1'
           }
         }
-        stage('test shel 2') {
+        stage('ok2') {
           steps {
-            sh 'echo sex2 && mkdir /root/sex2'
+            sh 'echo OK2'
+          }
+        }
+        stage('ok5') {
+          steps {
+            sh 'echo ok5'
           }
         }
       }
     }
-    stage('mv shell') {
-      steps {
-        sh 'mv /root/sex /root/sex2/ && echo moved'
+    stage('ok3') {
+      parallel {
+        stage('ok3') {
+          steps {
+            sh 'echo ok3'
+            sh 'echo okok3'
+          }
+        }
+        stage('ok4') {
+          steps {
+            sh 'echo ok4'
+          }
+        }
       }
     }
-    stage('end') {
+    stage('ok6') {
       steps {
-        echo 'sosite huy'
+        sh 'o ok6'
       }
     }
   }
